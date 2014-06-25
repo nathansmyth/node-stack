@@ -1,5 +1,5 @@
 {
-  "name": "node",
+  "name": "node-stack",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -20,6 +20,7 @@
     "mocha": "~1.18.2"
   },
   "engines": {
-    "node": ">= 0.8"
+    "node": "0.10.x",
+    "npm": "0.2.x"
   }
 }
