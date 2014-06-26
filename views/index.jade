@@ -3,3 +3,11 @@ extends layout
 block content
   h1= title
   p items for #{title}
+  div#example
+  script(type='text/jsx').
+    /** @jsx React.DOM */
+    React.renderComponent(
+      <h1>Hello, world!</h1>,
+      document.getElementById('example')
+    );
+    console.log('in');
