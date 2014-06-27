@@ -1,4 +1,5 @@
 var express = require('express');
+var redis = require('redis');
 var path = require('path');
 var favicon = require('static-favicon');
 var logger = require('morgan');
