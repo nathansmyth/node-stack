@@ -1,7 +1,29 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#content {
+  border: thin solid #000;
+  width: 85%;
+  height: 85%;
 }
-a {
-  color: #00b7ff;
+.box {
+  border: thick #40e0d0 solid;
+  margin: 1em;
+  padding: 1em;
+  cursor: hand;
+}
+#nathan {
+  width: 4em;
+  height: 6em;
+}
+#jyllie {
+  width: 5em;
+  height: 5em;
+  border-radius: 100px;
+}
+#ada {
+  width: 2em;
+  height: 4em;
+  border-radius: 10px;
+}
+#oakley {
+  width: 1em;
+  height: 2em;
 }
