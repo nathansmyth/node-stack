@@ -11,6 +11,59 @@ body {
   position: relative;
 }
 
+#comment {
+  position: absolute;
+  top: 3%;
+  right: 10%;
+  width: 15%;
+  height: 10%;
+}
+#markdown {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 33%;
+  height: 28%;
+}
+.standalone #markdown, .box #markdown {
+  position: absolute;
+  top: 3%;
+  right: 3%;
+  width: 97%;
+  height: 97%;
+}
+#submit {
+  position: absolute;
+  top: 22%;
+  right: 3%;
+  width: 6%;
+  height: 9%;
+}
+.standalone #submit, .box #submit {
+  position: absolute;
+  top: 71%;
+  bottom: 5%;
+  height: 20%;
+  right: 3%;
+  width: 35%;
+}
+.text-readable-input {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  text-rendering: optimizeLegibility;
+}
+.text-heavy-button {
+  font-weight: bolder;
+  font-size: 0.6rem;
+  padding: 2% 5% 11% 5%;
+}
+
+#list {
+  position: absolute;
+  top: 3%;
+  right: 10%;
+}
+
 .box {
   background-color: #91e600;
   text-align: center;
@@ -21,6 +74,7 @@ body {
   color: black;
   position: absolute;
   top:0;
+  right:2%;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
