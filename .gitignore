@@ -1,3 +1,6 @@
 .DS_STORE
 *.swp
 *.log
+*.rdb
+
+node_modules/
