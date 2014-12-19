@@ -1,110 +1,18 @@
-body {
-  background-color: #333;
-  font-family: Signika Negative, Asap, sans-serif;
-  color: #ADA;
+#content {
+  border: thin solid #000;
+  width: 85%;
+  height: 85%;
 }
-
-#container {
-  height: 801px;
-  overflow: visible;
-  padding: 0;
-  position: relative;
-}
-
-#comment {
-  position: absolute;
-  top: 3%;
-  right: 10%;
-  width: 15%;
-  height: 10%;
-}
-#markdown {
-  position: absolute;
-  top: 3%;
-  right: 3%;
-  width: 33%;
-  height: 28%;
-}
-.standalone #markdown, .box #markdown {
-  position: absolute;
-  top: 3%;
-  right: 3%;
-  width: 97%;
-  height: 97%;
-}
-#submit {
-  position: absolute;
-  top: 22%;
-  right: 3%;
-  width: 6%;
-  height: 9%;
-}
-.standalone #submit, .box #submit {
-  position: absolute;
-  top: 71%;
-  bottom: 5%;
-  height: 20%;
-  right: 3%;
-  width: 35%;
-}
-.text-readable-input {
-  font-size: 1.1rem;
-  line-height: 1.3;
-  text-rendering: optimizeLegibility;
-}
-.text-heavy-button {
-  font-weight: bolder;
-  font-size: 0.6rem;
-  padding: 2% 5% 11% 5%;
-}
-
-#list {
-  position: absolute;
-  top: 3%;
-  right: 10%;
-}
-
 .box {
-  background-color: #91e600;
-  text-align: center;
-  font-family: Asap, Avenir, Arial, sans-serif;
-  width: 196px;
-  height: 100px;
-  line-height: 100px;
-  color: black;
-  position: absolute;
-  top:0;
-  right:2%;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
+  border: thick #40e0d0 solid;
+  margin: 1em;
+  padding: 1em;
+  cursor: hand;
 }
-
 .controls {
-  background-color: #222;
-  border: 1px solid #555;
-  color: #bbb;
-  font-size: 18px;
-  margin: 20px 0;
-}
-.controls ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-.controls li {
-  display: inline-block;
-  padding: 8px 0 8px 10px;
-  margin: 0;
-}
-.controls input {
-  vertical-align: middle;
-  cursor: pointer;
-}
-.controls .controlsTitle {
-  border-right: 1px solid #555;
-  border-bottom: none;
-  padding-right: 10px;
+  position: absolute;
+  top: 10em;
+  right: 1em;
 }
 #nathan {
   width: 4em;
@@ -124,72 +32,14 @@ body {
   width: 1em;
   height: 2em;
 }
-
-
-/* def http://www.maxdesign.com.au/articles/definition/ */
-/* definition list, event layout */
-dl.event {
-	margin: 2em 0;
-	padding: 0;
-	font-family: georgia, times, serif;
+#list {
+  position: absolute;
+  top: 1em;
+  right: 1em;
 }
-.event dt {
-	position: relative;
-	left: 0;
-	top: 1.1em;
-	width: 5em;
-	font-weight: bold;
-}
-.event dd {
-	border-left: 1px solid #000;
-	margin: 0 0 0 6em;
-	padding: 0 0 .5em .5em;
-}
-
-/* definition list, gallery layout */
-dl.gallery {
-	border: 1px solid #000;
-	background-color: #ddd;
-	width: 102px;
-	text-align: center;
-	padding: 10px;
-	float: left;
-	margin-right: 1em;
-}
-.gallery dt {
-  font-weight: bold;
-}
-.gallery dt img {
-	border: 1px solid #000;
-	width: 100px;
-	height: 100px;
-}
-.gallery dd {
-	margin: 0;
-	padding: 0;
-}
-
-/* definition list, table layout */
-dl.table-display {
-	float: left;
-	width: 520px;
-	margin: 1em 0;
-	padding: 0;
-	border-bottom: 1px solid #999;
-}
-.table-display dt {
-	clear: left;
-	float: left;
-	width: 200px;
-	margin: 0;
-	padding: 5px;
-	border-top: 1px solid #999;
-	font-weight: bold;
-}
-.table-display dd {
-	float: left;
-	width: 300px;
-	margin: 0;
-	padding: 5px;
-	border-top: 1px solid #999;
+#create {
+  position: absolute;
+  top: 1em;
+  right: 10em;
+  width: 10em;
 }
