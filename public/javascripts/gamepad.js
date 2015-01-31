@@ -54,3 +54,17 @@ gamepad.AXES = {
   RIGHT_ANALOGUE_HOR: 2,
   RIGHT_ANALOGUE_VERT: 3
 };
+
+// Switch visuals if in an iframe
+if (window !== top) {
+  document.body.classList.add('iframe');
+}
+
+// Attach event listeners to mode radio buttons
+document.querySelector('#mode-visual').
+    addEventListener('click', tester.updateMode, false);
+document.querySelector('#mode-raw').
+    addEventListener('click', tester.updateMode, false);
+
+tester.init();
+gamepadSupport.init();

@@ -5,9 +5,11 @@ html
     link(rel='stylesheet', href='/stylesheets/normalize.css')
     link(rel='stylesheet', href='/stylesheets/foundation.min.css')
     link(rel='stylesheet', href='/stylesheets/famous-angular.css')
+    link(rel='stylesheet', href='/stylesheets/gamepad.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
   body
     block content
+    block gamepad_tester
     script(type='text/javascript', src='/javascripts/jquery-1.11.1.min.js')
     script(type='text/javascript', src='/javascripts/underscore-min.js')
     script(type='text/javascript', src='/javascripts/angular.js')
@@ -16,6 +18,7 @@ html
     script(type='text/javascript', src='/javascripts/showdown.min.js')
     script(type='text/javascript', src='/javascripts/async_storage.js')
     script(type='text/javascript', src='/javascripts/IndexedDBShim.min.js')
-    script(type='text/javascript', src='/javascripts/gamepad.js')
     script(type='text/javascript', src='/javascripts/gamepad.support.js')
+    script(type='text/javascript', src='/javascripts/gamepad.tester.js')
+    script(type='text/javascript', src='/javascripts/gamepad.js')
     script(type='text/javascript', src='/javascripts/stack.js')

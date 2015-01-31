@@ -8,7 +8,7 @@ block content
   div#jyllie.box
   div#ada.box
   div#oakley.box
-  
+
   ul#list
 
   input#create(type='text' name='create' placeholder='new item')
@@ -16,3 +16,71 @@ block content
   form#comment
     textarea#markdown.text-readable-input
     button#submit.text-heavy-button comment
+
+block gamepad_tester
+  div#menu
+    input#mode-visual(type='radio' name='mode' value='visual' checked)
+    label(for='mode-visual') Visual mode
+    input#mode-raw(type='radio' name='mode' value='raw')
+    label(for='mode-raw') Raw mode
+
+  div#no-gamepad-support
+    Your browser does not seem to support Gamepad API, or it might be we’re not detecting it very well. Sorry!
+
+  div#no-gamepads-connected
+    No gamepads seem to be connected. Be sure to plug in a gamepad and then press any of its buttons to activate it.
+
+  ul#gamepads
+    li.template
+      div.buttons
+        div.face(name='button-1')
+        div.face(name='button-2')
+        div.face(name='button-3')
+        div.face(name='button-4')
+
+        div.top-shoulder(name='button-left-shoulder-top')
+        div.top-shoulder(name='button-right-shoulder-top')
+        div.bottom-shoulder(name='button-left-shoulder-bottom')
+        div.bottom-shoulder(name='button-right-shoulder-bottom')
+
+        div.select-start(name='button-select')
+        div.select-start(name='button-start')
+
+        div.stick(name='stick-1')
+        div.stick(name='stick-2')
+
+        div.face(name='button-dpad-top')
+        div.face(name='button-dpad-bottom')
+        div.face(name='button-dpad-left')
+        div.face(name='button-dpad-right')
+
+      div.labels
+        label(for='button-1') N
+        label(for='button-2') N
+        label(for='button-3') N
+        label(for='button-4') N
+
+        label(for='button-left-shoulder-top') N
+        label(for='button-right-shoulder-top') N
+        label(for='button-left-shoulder-bottom') N
+        label(for='button-right-shoulder-bottom') N
+
+        label(for='button-select') N
+        label(for='button-start') N
+
+        label(for='stick-1') N
+        label(for='stick-2') N
+
+        label(for='button-dpad-top') N
+        label(for='button-dpad-bottom') N
+        label(for='button-dpad-left') N
+        label(for='button-dpad-right') N
+
+        label(for='stick-1-axis-x') N
+        label(for='stick-1-axis-y') N
+        label(for='stick-2-axis-x') N
+        label(for='stick-2-axis-y') N
+        div.extra-inputs
+
+      div.index
+      marquee.name(scrolldelay='50' scrollamount='2')
