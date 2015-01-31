@@ -4,19 +4,6 @@ block content
   h1= title
   p items for ADA and Jyllie's #{title}
   div#container
-    div#box1.box Drag and throw me
-    div#box2.box(style='left:392px; background-color:red;') Drag and throw me too
-
-  div.controls
-    ul
-      li.controlsTitle Options
-      li
-        label Snap end position to grid
-          input#snap(type='checkbox' name='snap' value='1')
-      li
-        label Live snap
-          input#liveSnap(type='checkbox' name='liveSnap' value='1')
-
   div#nathan.box
   div#jyllie.box
   div#ada.box
@@ -29,10 +16,3 @@ block content
   form#comment
     textarea#markdown.text-readable-input
     button#submit.text-heavy-button comment
-
-  script(type='text/javascript', src='/javascripts/jquery-1.11.1.min.js')
-  script(type='text/javascript', src='/javascripts/angular.js')
-  script(type='text/javascript', src='/javascripts/famous-global.js')
-  script(type='text/javascript', src='/javascripts/famous-angular.js')
-  script(type='text/javascript', src='/javascripts/stack.js')
-  link(rel='stylesheet', href='/javascripts/famous-angular.css')

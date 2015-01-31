@@ -3,16 +3,22 @@
   width: 85%;
   height: 85%;
 }
+#list {
+  position: absolute;
+  top: 1em;
+  right: 1em;
+}
+#create {
+  position: absolute;
+  top: 1em;
+  right: 10em;
+  width: 10em;
+}
 .box {
   border: thick #40e0d0 solid;
   margin: 1em;
   padding: 1em;
   cursor: hand;
-}
-.controls {
-  position: absolute;
-  top: 10em;
-  right: 1em;
 }
 #nathan {
   width: 4em;
@@ -31,15 +37,4 @@
 #oakley {
   width: 1em;
   height: 2em;
-}
-#list {
-  position: absolute;
-  top: 1em;
-  right: 1em;
-}
-#create {
-  position: absolute;
-  top: 1em;
-  right: 10em;
-  width: 10em;
 }
