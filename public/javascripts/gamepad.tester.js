@@ -168,15 +168,16 @@ var tester = {
     var gamepadEl = document.querySelector('#gamepad-' + gamepadId);
 
     // Update the stick visually.
-
     var stickEl = gamepadEl.querySelector('[name="' + stickId + '"]');
     if (stickEl) { // Extraneous sticks have just a label.
       var offsetVal = value * tester.STICK_OFFSET;
 
       if (horizontal) {
         stickEl.style.marginLeft = offsetVal + 'px';
+        $('#nathan').width( ( $('#nathan').width() + offsetVal ) + 'px' );
       } else {
         stickEl.style.marginTop = offsetVal + 'px';
+        $('#nathan').height( ( $('#nathan').height() + offsetVal ) + 'px' );
       }
     }
 
