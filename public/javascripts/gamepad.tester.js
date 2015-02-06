@@ -122,6 +122,7 @@ var tester = {
    */
   updateButton: function(button, gamepadId, id) {
     var gamepadEl = document.querySelector('#gamepad-' + gamepadId);
+    var gamepad = gamepad || {};
 
     var value, pressed;
 
@@ -136,6 +137,27 @@ var tester = {
       pressed = button > tester.ANALOGUE_BUTTON_THRESHOLD;
     }
 
+    if(button.pressed){
+      console.log(id);
+      if(id === 'button-select') {
+        console.log('select');
+        window.reload();
+      }
+      if(id === 'button-start') {
+        console.log('start');
+      }
+      if(id === 'extra-button-16') {
+        console.log('O HAI JYLLIE');
+      }
+      if(id.indexOf('right') !== -1 ) {
+        $('#ada').animate({opacity: '0.25'}, 500);
+        console.log('move .selected to next item');
+      }
+      if(id.indexOf('left') !== -1 ) {
+        $('#ada').animate({opacity: '0.99'}, 500);
+        console.log('move .selected to previous item');
+      }
+    }
     // Update the button visually.
     var buttonEl = gamepadEl.querySelector('[name="' + id + '"]');
     if (buttonEl) { // Extraneous buttons have just a label.
@@ -174,10 +196,14 @@ var tester = {
 
       if (horizontal) {
         stickEl.style.marginLeft = offsetVal + 'px';
-        $('#nathan').width( ( $('#nathan').width() + offsetVal ) + 'px' );
+        if(stickId === 'stick-1') { $('#nathan').width( ( $('#nathan').width() + offsetVal ) + 'px' ); }
+        if(stickId === 'stick-2') {         console.log('ADA', stickId, labelId, 'RAE');
+$('#jill').width( ( $('#jill').width() + offsetVal ) + 'px' ); }
+        // $('#nathan').animate({top: '+90px', left: '200px'}, 'fast', function() { console.log('animated'); })
       } else {
         stickEl.style.marginTop = offsetVal + 'px';
-        $('#nathan').height( ( $('#nathan').height() + offsetVal ) + 'px' );
+        if(stickId === 'stick-1') { $('#nathan').height( ( $('#nathan').height() + offsetVal ) + 'px' ); }
+        if(stickId === 'stick-2') { $('#jill').height( ( $('#jill').height() + offsetVal ) + 'px' ); }
       }
     }
 
