@@ -1,3 +1,3 @@
 #!/usr/bin/env node
 var debug = require('debug')('node');
-var app = require('../server.js');
+var api = require('../server.js');
