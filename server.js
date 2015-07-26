@@ -1,5 +1,11 @@
 var express = require('express');
 var redis = require('ioredis');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
+
+var routes = require('./routes/endpoints');
+var users = require('./routes/users');
 
 var api = express();
 // var redis = new Redis('/tmp/redis.sock');
