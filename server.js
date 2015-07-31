@@ -23,3 +23,5 @@ api.set('port', process.env.PORT || 3000);
 var server = api.listen(api.get('port'), function() {
   console.log('Listening on port %d', server.address().port);
 });
+
+module.exports = api;
