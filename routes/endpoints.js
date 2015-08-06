@@ -20,7 +20,7 @@ router.get('/', function(req, res, next) {
 // GET json representation of endpoints
 router.get('/endpoints.json', function(req, res, next) {
   res.setHeader('Content-Type', 'application/json');
-  res.send(JSON.stringify({ a: 1 }, null, 3));
+  res.send(JSON.stringify(endpoints, null, 3));
 });
 
 module.exports = router;
