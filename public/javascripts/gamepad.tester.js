@@ -69,42 +69,16 @@ var tester = {
         var gamepad = gamepads[i];
 
         if (gamepad) {
-          var el = document.createElement('li');
+          var el = document.createElement('i');
 
-          // Copy from the template.
-          el.innerHTML =
-              document.querySelector('#gamepads > .template').innerHTML;
+          el.innerHTML = i;
+          el.classList.add('fa');
+          el.classList.add('fa-gamepad');
+          el.classList.add('fa-3x');
 
           el.id = 'gamepad-' + i;
-          el.querySelector('.name').innerHTML = gamepad.id;
-          el.querySelector('.index').innerHTML = gamepad.index;
 
           document.querySelector('#gamepads').appendChild(el);
-
-          // Create extra elements for extraneous buttons.
-          var extraButtonId = gamepadSupport.TYPICAL_BUTTON_COUNT;
-          while (typeof gamepad.buttons[extraButtonId] != 'undefined') {
-            var labelEl = document.createElement('label');
-            labelEl.setAttribute('for', 'extra-button-' + extraButtonId);
-            labelEl.setAttribute('description', 'Extra button');
-            labelEl.setAttribute('access', 'buttons[' + extraButtonId + ']');
-            el.querySelector('.extra-inputs').appendChild(labelEl);
-
-            extraButtonId++;
-          }
-
-          // Create extra elements for extraneous sticks.
-          var extraAxisId = gamepadSupport.TYPICAL_AXIS_COUNT;
-          while (typeof gamepad.axes[extraAxisId] != 'undefined') {
-            var labelEl = document.createElement('label');
-            labelEl.setAttribute('for', 'extra-axis-' + extraAxisId);
-            labelEl.setAttribute('description', 'Extra axis');
-            labelEl.setAttribute('access', 'axes[' + extraAxisId + ']');
-            el.querySelector('.extra-inputs').appendChild(labelEl);
-
-            extraAxisId++;
-          }
-
           padsConnected = true;
         }
       }
@@ -121,7 +95,6 @@ var tester = {
    * Update a given button on the screen.
    */
   updateButton: function(button, gamepadId, id) {
-    var gamepadEl = document.querySelector('#gamepad-' + gamepadId);
     var gamepad = gamepad || {};
 
     var value, pressed;
@@ -141,7 +114,6 @@ var tester = {
       console.log(id);
       if(id === 'button-select') {
         console.log('select');
-        window.reload();
       }
       if(id === 'button-start') {
         console.log('start');
@@ -158,77 +130,58 @@ var tester = {
         console.log('move .selected to previous item');
       }
     }
-    // Update the button visually.
-    var buttonEl = gamepadEl.querySelector('[name="' + id + '"]');
-    if (buttonEl) { // Extraneous buttons have just a label.
-      if (pressed) {
-        buttonEl.classList.add('pressed');
-      } else {
-        buttonEl.classList.remove('pressed');
-      }
-    }
-
-    // Update its label.
-    var labelEl = gamepadEl.querySelector('label[for="' + id + '"]');
-    if (typeof value == 'undefined') {
-      labelEl.innerHTML = '?';
-    } else {
-      labelEl.innerHTML = value.toFixed(2);
-
-      if (value > tester.VISIBLE_THRESHOLD) {
-        labelEl.classList.add('visible');
-      } else {
-        labelEl.classList.remove('visible');
-      }
-    }
   },
 
   /**
    * Update a given analogue stick on the screen.
    */
   updateAxis: function(value, gamepadId, labelId, stickId, horizontal) {
-    var gamepadEl = document.querySelector('#gamepad-' + gamepadId);
+    if( true === false ) {
+      // never does, so let's just hold on to this logic here
+      var gamepadEl = document.querySelector('#gamepad-' + gamepadId);
 
-    // Update the stick visually.
-    var stickEl = gamepadEl.querySelector('[name="' + stickId + '"]');
-    if (stickEl) { // Extraneous sticks have just a label.
-      var offsetVal = value * tester.STICK_OFFSET;
-
-      if (horizontal) {
-        stickEl.style.marginLeft = offsetVal + 'px';
-        if(stickId === 'stick-1') { $('#nathan').width( ( $('#nathan').width() + offsetVal ) + 'px' ); }
-        if(stickId === 'stick-2') {         console.log('ADA', stickId, labelId, 'RAE');
-$('#jill').width( ( $('#jill').width() + offsetVal ) + 'px' ); }
-        // $('#nathan').animate({top: '+90px', left: '200px'}, 'fast', function() { console.log('animated'); })
-      } else {
-        stickEl.style.marginTop = offsetVal + 'px';
-        if(stickId === 'stick-1') { $('#nathan').height( ( $('#nathan').height() + offsetVal ) + 'px' ); }
-        if(stickId === 'stick-2') { $('#jill').height( ( $('#jill').height() + offsetVal ) + 'px' ); }
+      // Update the stick visually.
+      var stickEl = gamepadEl.querySelector('[name="' + stickId + '"]');
+      if (stickEl) { // Extraneous sticks have just a label.
       }
-    }
+      // Update its label.
+      var labelEl = gamepadEl.querySelector('label[for="' + labelId + '"]');
+      if (typeof value == 'undefined') {
+        labelEl.innerHTML = '?';
+      } else {
+        labelEl.innerHTML = value.toFixed(2);
 
-    // Update its label.
+        if ((value < -tester.VISIBLE_THRESHOLD) ||
+            (value > tester.VISIBLE_THRESHOLD)) {
+          labelEl.classList.add('visible');
 
-    var labelEl = gamepadEl.querySelector('label[for="' + labelId + '"]');
-    if (typeof value == 'undefined') {
-      labelEl.innerHTML = '?';
-    } else {
-      labelEl.innerHTML = value.toFixed(2);
-
-      if ((value < -tester.VISIBLE_THRESHOLD) ||
-          (value > tester.VISIBLE_THRESHOLD)) {
-        labelEl.classList.add('visible');
-
-        if (value > tester.VISIBLE_THRESHOLD) {
-          labelEl.classList.add('positive');
+          if (value > tester.VISIBLE_THRESHOLD) {
+            labelEl.classList.add('positive');
+          } else {
+            labelEl.classList.add('negative');
+          }
         } else {
-          labelEl.classList.add('negative');
+          labelEl.classList.remove('visible');
+          labelEl.classList.remove('positive');
+          labelEl.classList.remove('negative');
         }
-      } else {
-        labelEl.classList.remove('visible');
-        labelEl.classList.remove('positive');
-        labelEl.classList.remove('negative');
       }
+    } else {
+      // here's the good stuff
+      var offsetVal = value * tester.STICK_OFFSET;
+      var eventName = '';
+      if (horizontal) {
+        eventName = 'gp:axis:horizontal';
+      } else {
+        eventName = 'gp:axis:vertical';
+      }
+      var eventData = {
+        gamepad: gamepadId,
+        stick: stickId,
+        label: labelId,
+        offset: offsetVal
+      };
+      $(document).trigger(eventName, eventData);
     }
   }
 };
