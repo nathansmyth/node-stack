@@ -1,6 +1,6 @@
 {
   "name": "node-stack",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Nathan Smyth <email@nathansmyth.com>",
   "private": true,
   "scripts": {
@@ -8,7 +8,7 @@
     "unit": "nodeunit **.js",
     "uglify": "uglifyjs **.js",
     "startapp": "node ./bin/app",
-    "start": "node ./bin/www"
+    "start": "node ./bin/api"
   },
   "dependencies": {
     "express": "4.12.x",
