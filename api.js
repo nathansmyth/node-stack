@@ -27,7 +27,7 @@ api.use(function(err, req, res, next){
   res.send(500, 'Something broke!');
 });
 
-api.set('port', process.env.PORT || 3000);
+api.set('port', process.env.PORT || 5000);
 api.set('env', 'development');
 
 var server = api.listen(api.get('port'), function() {
