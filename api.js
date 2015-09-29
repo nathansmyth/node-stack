@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 
 var endpoints = require('./routes/endpoints');
 var users = require('./routes/users');
+var photos = require('./routes/photos');
 
 var api = express();
 
@@ -30,6 +31,7 @@ api.use(express.static(path.join(__dirname, 'public')));
 
 api.use('/', endpoints);
 api.use('/users', users);
+api.use('/photos', photos);
 
 /// error handlers
 
