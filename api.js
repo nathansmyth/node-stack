@@ -1,5 +1,4 @@
 var express = require('express');
-var redis = require('ioredis');
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -9,7 +8,6 @@ var endpoints = require('./routes/endpoints');
 var users = require('./routes/users');
 
 var api = express();
-// var redis = new Redis('/tmp/redis.sock');
 
 // view engine setup
 api.set('views', path.join(__dirname, 'views'));
@@ -18,14 +16,6 @@ api.set('view engine', 'jade');
 api.use(bodyParser.json());
 api.use(bodyParser.urlencoded());
 api.use(cookieParser());
-
-api.get('/', function(req, res){
-  res.send('Hello World');
-});
-api.use(function(err, req, res, next){
-  console.error(err.stack);
-  res.send(500, 'Something broke!');
-});
 
 api.set('port', process.env.PORT || 5000);
 api.set('env', 'development');
