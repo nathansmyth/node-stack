@@ -3,5 +3,10 @@
 *.log
 *.rdb
 
+*.mp4
+*.webm
+*.mpg
+
+logs/
 node_modules/
 caret
