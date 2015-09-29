@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "lint": "jshint **.js",
-    "unit": "nodeunit **.js",
+    "test": "mocha test",
     "uglify": "uglifyjs **.js",
     "run": "node ./bin/app",
     "start": "node ./bin/api"
