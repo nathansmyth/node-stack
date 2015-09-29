@@ -2,6 +2,7 @@
 *.swp
 *.log
 *.rdb
+*.env
 
 *.mp3
 *.wav
