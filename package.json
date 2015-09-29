@@ -32,7 +32,7 @@
     "uglify-js": "2.4.x"
   },
   "engines": {
-    "node": "0.12.x",
-    "npm": "2.5.x"
+    "node": "4.0.x",
+    "npm": "2.14.x"
   }
 }
