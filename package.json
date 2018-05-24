@@ -7,7 +7,7 @@
     "lint": "jshint **.js",
     "test": "mocha test",
     "uglify": "uglifyjs **.js",
-    "run": "node ./bin/app",
+    "app": "node ./bin/app",
     "start": "node ./bin/api"
   },
   "dependencies": {

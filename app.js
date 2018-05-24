@@ -24,9 +24,9 @@ app.use('/users', users);
 
 /// error handlers
 /// catch 404 and forward to error handler
-www.use(logErrors);
-www.use(clientErrorHandler);
-www.use(errorHandler);
+app.use(logErrors);
+app.use(clientErrorHandler);
+app.use(errorHandler);
 function logErrors(err, req, res, next) {
   console.log('Error Logging', err.stack);
   next(err);
