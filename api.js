@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 
 var endpoints = require('./routes/endpoints');
 var users = require('./routes/users');
-var photos = require('./routes/photos');
+// var photos = require('./routes/photos');
 
 var api = express();
 
@@ -17,11 +17,11 @@ api.set('views', path.join(__dirname, 'views'));
 api.set('view engine', 'jade');
 
 api.use(bodyParser.json());
-api.use(bodyParser.urlencoded());
+// api.use(bodyParser.urlencoded());
 api.use(cookieParser());
 
-api.set('port', process.env.PORT || 5000);
-api.set('env', 'development');
+api.set('port', process.env.port || 5000);
+api.set('env', process.env.env || 'development');
 
 var server = api.listen(api.get('port'), function() {
   console.log('Listening on port %d', server.address().port);
@@ -31,7 +31,7 @@ api.use(express.static(path.join(__dirname, 'public')));
 
 api.use('/', endpoints);
 api.use('/users', users);
-api.use('/photos', photos);
+// api.use('/photos', photos);
 
 /// error handlers
 
