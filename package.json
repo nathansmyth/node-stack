@@ -4,7 +4,7 @@
   "author": "Nathan Smyth <email@nathansmyth.com>",
   "private": true,
   "scripts": {
-    "lint": "jshint **.js",
+    "lint": "eslint **.js",
     "test": "mocha test",
     "uglify": "uglifyjs **.js",
     "app": "node ./bin/app",
@@ -25,7 +25,7 @@
   },
   "devDependencies": {
     "chai": "3.3.x",
-    "jshint": "2.9.5",
+    "eslint": "^5.0.1",
     "jsverify": "0.5.x",
     "mocha": "5.2.0",
     "supertest": "3.1.0",
