@@ -6,7 +6,6 @@
   "scripts": {
     "lint": "eslint **.js",
     "test": "mocha test",
-    "uglify": "uglifyjs **.js",
     "app": "node ./bin/app",
     "start": "node ./bin/api"
   },
@@ -29,8 +28,7 @@
     "eslint": "5.0.1",
     "jsverify": "0.5.x",
     "mocha": "5.2.0",
-    "supertest": "3.1.0",
-    "uglify-js": "3.4.2"
+    "supertest": "3.1.0"
   },
   "engines": {
     "node": "8.11.1",
