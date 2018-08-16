@@ -14,7 +14,7 @@ var api = express()
 
 // view engine setup
 api.set('views', path.join(__dirname, 'views'))
-api.set('view engine', 'jade')
+api.set('view engine', 'pug')
 
 api.use(bodyParser.json())
 // api.use(bodyParser.urlencoded())
